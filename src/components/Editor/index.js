@@ -1,4 +1,4 @@
-import wangeditor from './src/Editor'
+import wangeditor from './src'
 
 const components = [
   wangeditor

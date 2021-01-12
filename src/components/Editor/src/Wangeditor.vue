@@ -7,7 +7,7 @@ import xss from 'xss'
 import WangEditor from 'wangeditor'
 
 export default {
-  name: 'Editor',
+  name: 'Wangeditor',
   props: {
     value: { type: String, default: '' },
     config: { type: Object, default: () => ({}) },
