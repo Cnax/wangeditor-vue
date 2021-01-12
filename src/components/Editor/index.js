@@ -1,7 +1,7 @@
-import Editor from './src/Editor'
+import wangeditor from './src/Editor'
 
 const components = [
-  Editor
+  wangeditor
 ]
 
 const install = function (Vue) {
@@ -18,5 +18,5 @@ if (typeof window !== 'undefined' && window.Vue) {
 
 export default {
   install,
-  Editor
+  wangeditor
 }

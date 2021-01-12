@@ -1,7 +1,7 @@
-import Editor from './Editor'
+import wangeditor from './Editor'
 /* istanbul ignore next */
-Editor.install = function (Vue) {
-  Vue.component(Editor.name, Editor)
+wangeditor.install = function (Vue) {
+  Vue.component(wangeditor.name, wangeditor)
 }
 
-export default Editor
+export default wangeditor
