@@ -1,16 +1,22 @@
 {
   "name": "wangeditor-vue",
-  "version": "0.1.0",
-  "private": true,
+  "version": "1.0.1",
+  "private": false,
+  "main": "lib/wangeditor-vue.umd.min.js",
+  "author": "cnax <1462438798@qq.com>",
+  "license": "ISC",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
+    "lib": "vue-cli-service build --target lib --name wangeditor-vue --dest lib src/components/Editor/index.js",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
     "core-js": "^3.6.5",
     "vue": "^2.6.11",
-    "vue-router": "^3.2.0"
+    "vue-router": "^3.2.0",
+    "wangeditor": "^4.6.2",
+    "xss": "^1.0.8"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
