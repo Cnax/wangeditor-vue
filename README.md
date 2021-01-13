@@ -20,18 +20,23 @@ Vue.use(wangeditor)
 二、按需引入
 ```javascript
 <template>
-  <wangeditor v-model="editorContent" />
+  <div>
+    <wangeditor v-model="content" disabled />
+  </div>
 </template>
-import wangeditor from 'wangeditor-vue'
 
+<script>
+import wangeditor from 'wangeditor-vue'
 export default {
   components: { wangeditor },
   data () {
     return {
-      editorContent
+      content: '<p>1212121<br>ww</p>'
     }
   }
 }
+</script>
+
 ```
 
 ### Props

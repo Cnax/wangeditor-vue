@@ -42,8 +42,10 @@ export default {
     disabled: {
       immediate: true,
       handler (val) {
-        if (this.editor && val) {
-          this.editor.disable()
+        if (val) {
+          this.$nextTick().then(() => {
+            this.editor && this.editor.disable()
+          })
         }
       }
     }

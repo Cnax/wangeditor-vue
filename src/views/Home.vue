@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <editor v-model="content"/>
+    <editor v-model="content" @onChange="editorChange"/>
   </div>
 </template>
 
@@ -16,6 +16,11 @@ export default {
   data () {
     return {
       content: '123'
+    }
+  },
+  methods: {
+    editorChange (html) {
+      console.log('editorChange>>>', html)
     }
   }
 }
