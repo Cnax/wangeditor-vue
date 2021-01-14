@@ -1,6 +1,6 @@
 {
   "name": "@yunjia/wangeditor-vue",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "private": false,
   "main": "lib/wangeditor-vue.umd.min.js",
   "author": "cnax <1462438798@qq.com>",
