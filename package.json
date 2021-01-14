@@ -1,5 +1,5 @@
 {
-  "name": "wangeditor-vue",
+  "name": "@yunjia/wangeditor-vue",
   "version": "0.1.7",
   "private": false,
   "main": "lib/wangeditor-vue.umd.min.js",
@@ -10,7 +10,7 @@
     "build": "vue-cli-service build",
     "lib": "vue-cli-service build --target lib --name wangeditor-vue --dest lib src/components/Editor/index.js",
     "lint": "vue-cli-service lint",
-    "pub:private": "npm run lib && sh publish-private.sh"
+    "pub:private": "npm run lib && bash publish-private.sh"
   },
   "dependencies": {
     "core-js": "^3.6.5",

@@ -13,23 +13,6 @@ then
   npm config set @yunjia:registry http://172.16.6.107:7070/repository/npm-private/
   npm config set '//172.16.6.107:7070/repository/npm-private/:_authToken' 'NpmToken.04e9d860-e0cd-351e-ba14-d6b367e003a5'
 
-  # build
-  VERSION=$VERSION npm run dist
-
-  # publish theme
-  echo "Releasing theme-chalk $VERSION ..."
-  cd packages/theme-chalk
-  npm version $VERSION --message "[release] $VERSION"
-  if [[ $VERSION =~ "beta" ]]
-  then
-    npm publish --tag beta
-  else
-    npm publish
-  fi
-
-  echo "Releasing spacex-ui"
-  cd ../..
-
   # commit
   git add -A
   git commit -m "[build] $VERSION"
@@ -42,7 +25,7 @@ then
   git rebase master
   # git push eleme dev
 
-  echo "Releasing spacex-ui $VERSION ..."
+  echo "Releasing wangeditor-vue $VERSION ..."
   if [[ $VERSION =~ "beta" ]]
   then
     npm publish --tag beta
