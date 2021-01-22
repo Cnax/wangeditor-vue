@@ -16,7 +16,7 @@ then
 
   
   # commit
-  git add -a
+  git add -A
   git commit -m "[build] $VERSION"
 
   # publish
