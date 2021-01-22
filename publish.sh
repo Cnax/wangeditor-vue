@@ -9,21 +9,27 @@ if [[ $REPLY =~ ^[Yy]$ ]]
 then
   echo "Releasing $VERSION ..."
 
-  #set npm config
-  npm config set @yunjia:registry http://172.16.6.107:7070/repository/npm-private/
-  npm config set '//172.16.6.107:7070/repository/npm-private/:_authToken' 'NpmToken.04e9d860-e0cd-351e-ba14-d6b367e003a5'
+  # 处理 package.json
+  sed -i -e "s/\"version\": \(.*\)/\"version\": \"$VERSION\",/g" 'package.json'
+  if [ -f "package.json-e" ];then
+    rm 'package.json-e'
+  fi
+  echo '\033[36m版本号修改成功\033[0m'
 
+  #set npm config
+  npm config set registry https://registry.npmjs.org/
+
+  
   # commit
   git add -A
   git commit -m "[build] $VERSION"
-  npm version $VERSION --message "[release] $VERSION"
 
   # publish
   git push
   git push origin refs/tags/v$VERSION
   # git checkout dev
   git rebase master
-  # git push eleme dev
+  # git push dev
 
   echo "Releasing wangeditor-vue $VERSION ..."
   if [[ $VERSION =~ "beta" ]]
@@ -32,4 +38,16 @@ then
   else
     npm publish
   fi
+
+  echo '\033[36m请进行登录相关操作：\033[0m'
+
+  npm login #登录
+
+  echo "-------\033[36mpublishing\033[0m-------"
+
+  npm publish # 发布
+
+  echo "\033[36m 完成 \033[0m"
+  exit
+
 fi
