@@ -5,7 +5,6 @@
 </template>
 
 <script>
-// @ is an alias to /src
 import Editor from '@/components/Editor/src'
 
 export default {
