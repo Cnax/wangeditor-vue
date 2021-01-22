@@ -10,7 +10,7 @@
     "build": "vue-cli-service build",
     "lib": "vue-cli-service build --target lib --name wangeditor-vue --dest lib src/components/Editor/index.js",
     "lint": "vue-cli-service lint",
-    "pub:private": "npm run lib && sh publish.sh"
+    "pub": "npm run lib && sh publish.sh"
   },
   "dependencies": {
     "core-js": "^3.6.5",
